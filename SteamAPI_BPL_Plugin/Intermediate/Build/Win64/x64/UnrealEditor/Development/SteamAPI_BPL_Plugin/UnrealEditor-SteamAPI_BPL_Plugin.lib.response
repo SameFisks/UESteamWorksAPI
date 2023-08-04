@@ -1,0 +1,16 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-SteamAPI_BPL_Plugin.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp.obj"
+"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\SteamAPI_BPL_Plugin.cpp.obj"
+"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\SteamAPI_BPL_PluginBPLibrary.cpp.obj"
+"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\UISteamFriends.cpp.obj"
+"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\UISteamUtils.cpp.obj"
+"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Default.rc2.res"
+/OUT:"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\UnrealEditor-SteamAPI_BPL_Plugin.lib"
