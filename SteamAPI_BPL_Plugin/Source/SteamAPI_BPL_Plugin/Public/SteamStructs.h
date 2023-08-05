@@ -39,6 +39,23 @@ struct FUint32
 };
 
 USTRUCT(BlueprintType)
+struct FUint16
+{
+	GENERATED_BODY()
+
+		uint16 Value;
+
+	operator uint16() { return Value; }
+	operator uint16() const { return Value; }
+
+	FUint16() :
+		Value(0) {}
+	FUint16(uint16 value) :
+		Value(value) {}
+};
+
+
+USTRUCT(BlueprintType)
 struct FInt32
 {
 	GENERATED_BODY()
@@ -119,6 +136,18 @@ struct  FHAuthTicket : public FUint32
 };
 USTRUCT(BlueprintType)
 struct  FHSteamUser : public FUint32
+{
+	GENERATED_BODY()
+		using FUint32::FUint32;
+};
+USTRUCT(BlueprintType)
+struct  FHSteamPipe : public FUint32
+{
+	GENERATED_BODY()
+		using FUint32::FUint32;
+};
+USTRUCT(BlueprintType)
+struct  FISteamAppList : public FUint32
 {
 	GENERATED_BODY()
 		using FUint32::FUint32;

@@ -2641,7 +2641,7 @@ void FOnSetPersonaNameResponseDelegate_DelegateWrapper(const FMulticastScriptDel
 	};
 	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_SteamIDFriend = { "SteamIDFriend", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamFriends_eventGetFriendAvatar_Parms, SteamIDFriend), Z_Construct_UScriptStruct_FSteamID, METADATA_PARAMS(nullptr, 0) }; // 2174972862
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_AvatarSize_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_AvatarSize = { "AvatarSize", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamFriends_eventGetFriendAvatar_Parms, AvatarSize), Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAvatarSize, METADATA_PARAMS(nullptr, 0) }; // 2495308715
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_AvatarSize = { "AvatarSize", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamFriends_eventGetFriendAvatar_Parms, AvatarSize), Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAvatarSize, METADATA_PARAMS(nullptr, 0) }; // 163377479
 	const UECodeGen_Private::FIntPropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_ImageHandle = { "ImageHandle", nullptr, (EPropertyFlags)0x0010000000000180, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamFriends_eventGetFriendAvatar_Parms, ImageHandle), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamFriends_eventGetFriendAvatar_Parms, ReturnValue), Z_Construct_UClass_UTexture2D_NoRegister, METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UISteamFriends_GetFriendAvatar_Statics::PropPointers[] = {
@@ -4884,7 +4884,7 @@ void FOnSetPersonaNameResponseDelegate_DelegateWrapper(const FMulticastScriptDel
 		{ &Z_Construct_UFunction_UISteamFriends_GetCoplayFriend, "GetCoplayFriend" }, // 3767066088
 		{ &Z_Construct_UFunction_UISteamFriends_GetCoplayFriendCount, "GetCoplayFriendCount" }, // 1093686510
 		{ &Z_Construct_UFunction_UISteamFriends_GetFollowerCount, "GetFollowerCount" }, // 357851899
-		{ &Z_Construct_UFunction_UISteamFriends_GetFriendAvatar, "GetFriendAvatar" }, // 3644087428
+		{ &Z_Construct_UFunction_UISteamFriends_GetFriendAvatar, "GetFriendAvatar" }, // 671843899
 		{ &Z_Construct_UFunction_UISteamFriends_GetFriendByIndex, "GetFriendByIndex" }, // 2811469066
 		{ &Z_Construct_UFunction_UISteamFriends_GetFriendCoplayGame, "GetFriendCoplayGame" }, // 1265788366
 		{ &Z_Construct_UFunction_UISteamFriends_GetFriendCoplayTime, "GetFriendCoplayTime" }, // 2361364933
@@ -5177,9 +5177,9 @@ void FOnSetPersonaNameResponseDelegate_DelegateWrapper(const FMulticastScriptDel
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamFriends_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UISteamFriends, UISteamFriends::StaticClass, TEXT("UISteamFriends"), &Z_Registration_Info_UClass_UISteamFriends, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamFriends), 2565357305U) },
+		{ Z_Construct_UClass_UISteamFriends, UISteamFriends::StaticClass, TEXT("UISteamFriends"), &Z_Registration_Info_UClass_UISteamFriends, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamFriends), 2183612807U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamFriends_h_3415849908(TEXT("/Script/SteamAPI_BPL_Plugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamFriends_h_3538520191(TEXT("/Script/SteamAPI_BPL_Plugin"),
 		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamFriends_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamFriends_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);

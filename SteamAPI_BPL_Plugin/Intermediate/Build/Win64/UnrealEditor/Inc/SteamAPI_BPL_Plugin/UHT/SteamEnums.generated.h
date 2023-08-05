@@ -335,6 +335,24 @@ enum class ESteamFriendFlags : uint8;
 template<> struct TIsUEnumClass<ESteamFriendFlags> { enum { Value = true }; };
 template<> STEAMAPI_BPL_PLUGIN_API UEnum* StaticEnum<ESteamFriendFlags>();
 
+#define FOREACH_ENUM_ESTEAMACCOUNTTYPE(op) \
+	op(ESteamAccountType::Invalid) \
+	op(ESteamAccountType::Individual) \
+	op(ESteamAccountType::Multiseat) \
+	op(ESteamAccountType::GameServer) \
+	op(ESteamAccountType::AnonGameServer) \
+	op(ESteamAccountType::Pending) \
+	op(ESteamAccountType::ContentServer) \
+	op(ESteamAccountType::Clan) \
+	op(ESteamAccountType::Chat) \
+	op(ESteamAccountType::ConsoleUser) \
+	op(ESteamAccountType::AnonUser) \
+	op(ESteamAccountType::Max) 
+
+enum class ESteamAccountType : uint8;
+template<> struct TIsUEnumClass<ESteamAccountType> { enum { Value = true }; };
+template<> STEAMAPI_BPL_PLUGIN_API UEnum* StaticEnum<ESteamAccountType>();
+
 #define FOREACH_ENUM_ESTEAMAVATARSIZE(op) \
 	op(ESteamAvatarSize::Small) \
 	op(ESteamAvatarSize::Medium) \

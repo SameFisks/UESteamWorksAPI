@@ -9,6 +9,7 @@
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 // Cross Module References
+	STEAMAPI_BPL_PLUGIN_API UEnum* Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType();
 	STEAMAPI_BPL_PLUGIN_API UEnum* Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAPICallFailure_();
 	STEAMAPI_BPL_PLUGIN_API UEnum* Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAudioPlaybackStatus();
 	STEAMAPI_BPL_PLUGIN_API UEnum* Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAuthSessionResponse();
@@ -1475,6 +1476,93 @@ void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 		}
 		return Z_Registration_Info_UEnum_ESteamFriendFlags.InnerSingleton;
 	}
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESteamAccountType;
+	static UEnum* ESteamAccountType_StaticEnum()
+	{
+		if (!Z_Registration_Info_UEnum_ESteamAccountType.OuterSingleton)
+		{
+			Z_Registration_Info_UEnum_ESteamAccountType.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType, (UObject*)Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin(), TEXT("ESteamAccountType"));
+		}
+		return Z_Registration_Info_UEnum_ESteamAccountType.OuterSingleton;
+	}
+	template<> STEAMAPI_BPL_PLUGIN_API UEnum* StaticEnum<ESteamAccountType>()
+	{
+		return ESteamAccountType_StaticEnum();
+	}
+	struct Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics
+	{
+		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FEnumParams EnumParams;
+	};
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enumerators[] = {
+		{ "ESteamAccountType::Invalid", (int64)ESteamAccountType::Invalid },
+		{ "ESteamAccountType::Individual", (int64)ESteamAccountType::Individual },
+		{ "ESteamAccountType::Multiseat", (int64)ESteamAccountType::Multiseat },
+		{ "ESteamAccountType::GameServer", (int64)ESteamAccountType::GameServer },
+		{ "ESteamAccountType::AnonGameServer", (int64)ESteamAccountType::AnonGameServer },
+		{ "ESteamAccountType::Pending", (int64)ESteamAccountType::Pending },
+		{ "ESteamAccountType::ContentServer", (int64)ESteamAccountType::ContentServer },
+		{ "ESteamAccountType::Clan", (int64)ESteamAccountType::Clan },
+		{ "ESteamAccountType::Chat", (int64)ESteamAccountType::Chat },
+		{ "ESteamAccountType::ConsoleUser", (int64)ESteamAccountType::ConsoleUser },
+		{ "ESteamAccountType::AnonUser", (int64)ESteamAccountType::AnonUser },
+		{ "ESteamAccountType::Max", (int64)ESteamAccountType::Max },
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enum_MetaDataParams[] = {
+		{ "AnonGameServer.DisplayName", "AnonGameServer" },
+		{ "AnonGameServer.Name", "ESteamAccountType::AnonGameServer" },
+		{ "AnonUser.DisplayName", "AnonUser" },
+		{ "AnonUser.Name", "ESteamAccountType::AnonUser" },
+		{ "BlueprintType", "true" },
+		{ "Chat.DisplayName", "Chat" },
+		{ "Chat.Name", "ESteamAccountType::Chat" },
+		{ "Clan.DisplayName", "Clan" },
+		{ "Clan.Name", "ESteamAccountType::Clan" },
+		{ "Comment", "//UENUM(BlueprintType)\n//enum class ESteamPersonaState : uint8\n//{\n//\x09Offline = 0 UMETA(DisplayName = \"Offline\"),\n//\x09Online = 1 UMETA(DisplayName = \"Online\"),\n//\x09""Busy = 2 UMETA(DisplayName = \"Busy\"),\n//\x09""Away = 3 UMETA(DisplayName = \"Away\"),\n//\x09Snooze = 4 UMETA(DisplayName = \"Snooze\"),\n//\x09LookingToTrade = 5 UMETA(DisplayName = \"LookingToTrade\"),\n//\x09LookingToPlay = 6 UMETA(DisplayName = \"LookingToPlay\"),\n//\x09Max UMETA(DisplayName = \"Max\")\n//};\n//\n//UENUM(BlueprintType)\n//enum class ESteamFriendRelationship : uint8\n//{\n//\x09None = 0 UMETA(DisplayName = \"None\"),\n//\x09""Blocked = 1 UMETA(DisplayName = \"Blocked\"),\n//\x09RequestRecipient = 2 UMETA(DisplayName = \"RequestRecipient\"),\n//\x09""Friend = 3 UMETA(DisplayName = \"Friend\"),\n//\x09RequestInitiator = 4 UMETA(DisplayName = \"RequestInitiator\"),\n//\x09Ignored = 5 UMETA(DisplayName = \"Ignored\"),\n//\x09IgnoredFriend = 6 UMETA(DisplayName = \"IgnoredFriend\"),\n//\x09Max = 8 UMETA(DisplayName = \"Max\")\n//};\n" },
+		{ "ConsoleUser.DisplayName", "ConsoleUser" },
+		{ "ConsoleUser.Name", "ESteamAccountType::ConsoleUser" },
+		{ "ContentServer.DisplayName", "ContentServer" },
+		{ "ContentServer.Name", "ESteamAccountType::ContentServer" },
+		{ "GameServer.DisplayName", "GameServer" },
+		{ "GameServer.Name", "ESteamAccountType::GameServer" },
+		{ "Individual.DisplayName", "Individual" },
+		{ "Individual.Name", "ESteamAccountType::Individual" },
+		{ "Invalid.DisplayName", "Invalid" },
+		{ "Invalid.Name", "ESteamAccountType::Invalid" },
+		{ "Max.DisplayName", "Max" },
+		{ "Max.Name", "ESteamAccountType::Max" },
+		{ "ModuleRelativePath", "Public/SteamEnums.h" },
+		{ "Multiseat.DisplayName", "Multiseat" },
+		{ "Multiseat.Name", "ESteamAccountType::Multiseat" },
+		{ "Pending.DisplayName", "Pending" },
+		{ "Pending.Name", "ESteamAccountType::Pending" },
+		{ "ToolTip", "UENUM(BlueprintType)\nenum class ESteamPersonaState : uint8\n{\n       Offline = 0 UMETA(DisplayName = \"Offline\"),\n       Online = 1 UMETA(DisplayName = \"Online\"),\n       Busy = 2 UMETA(DisplayName = \"Busy\"),\n       Away = 3 UMETA(DisplayName = \"Away\"),\n       Snooze = 4 UMETA(DisplayName = \"Snooze\"),\n       LookingToTrade = 5 UMETA(DisplayName = \"LookingToTrade\"),\n       LookingToPlay = 6 UMETA(DisplayName = \"LookingToPlay\"),\n       Max UMETA(DisplayName = \"Max\")\n};\n\nUENUM(BlueprintType)\nenum class ESteamFriendRelationship : uint8\n{\n       None = 0 UMETA(DisplayName = \"None\"),\n       Blocked = 1 UMETA(DisplayName = \"Blocked\"),\n       RequestRecipient = 2 UMETA(DisplayName = \"RequestRecipient\"),\n       Friend = 3 UMETA(DisplayName = \"Friend\"),\n       RequestInitiator = 4 UMETA(DisplayName = \"RequestInitiator\"),\n       Ignored = 5 UMETA(DisplayName = \"Ignored\"),\n       IgnoredFriend = 6 UMETA(DisplayName = \"IgnoredFriend\"),\n       Max = 8 UMETA(DisplayName = \"Max\")\n};" },
+	};
+#endif
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::EnumParams = {
+		(UObject*(*)())Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin,
+		nullptr,
+		"ESteamAccountType",
+		"ESteamAccountType",
+		Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enumerators,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enumerators),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EEnumFlags::None,
+		(uint8)UEnum::ECppForm::EnumClass,
+		METADATA_PARAMS(Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::Enum_MetaDataParams))
+	};
+	UEnum* Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType()
+	{
+		if (!Z_Registration_Info_UEnum_ESteamAccountType.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ESteamAccountType.InnerSingleton, Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAccountType_Statics::EnumParams);
+		}
+		return Z_Registration_Info_UEnum_ESteamAccountType.InnerSingleton;
+	}
 	static FEnumRegistrationInfo Z_Registration_Info_UEnum_ESteamAvatarSize;
 	static UEnum* ESteamAvatarSize_StaticEnum()
 	{
@@ -1504,7 +1592,6 @@ void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAvatarSize_Statics::Enum_MetaDataParams[] = {
 		{ "BlueprintType", "true" },
-		{ "Comment", "//UENUM(BlueprintType)\n//enum class ESteamPersonaState : uint8\n//{\n//\x09Offline = 0 UMETA(DisplayName = \"Offline\"),\n//\x09Online = 1 UMETA(DisplayName = \"Online\"),\n//\x09""Busy = 2 UMETA(DisplayName = \"Busy\"),\n//\x09""Away = 3 UMETA(DisplayName = \"Away\"),\n//\x09Snooze = 4 UMETA(DisplayName = \"Snooze\"),\n//\x09LookingToTrade = 5 UMETA(DisplayName = \"LookingToTrade\"),\n//\x09LookingToPlay = 6 UMETA(DisplayName = \"LookingToPlay\"),\n//\x09Max UMETA(DisplayName = \"Max\")\n//};\n//\n//UENUM(BlueprintType)\n//enum class ESteamFriendRelationship : uint8\n//{\n//\x09None = 0 UMETA(DisplayName = \"None\"),\n//\x09""Blocked = 1 UMETA(DisplayName = \"Blocked\"),\n//\x09RequestRecipient = 2 UMETA(DisplayName = \"RequestRecipient\"),\n//\x09""Friend = 3 UMETA(DisplayName = \"Friend\"),\n//\x09RequestInitiator = 4 UMETA(DisplayName = \"RequestInitiator\"),\n//\x09Ignored = 5 UMETA(DisplayName = \"Ignored\"),\n//\x09IgnoredFriend = 6 UMETA(DisplayName = \"IgnoredFriend\"),\n//\x09Max = 8 UMETA(DisplayName = \"Max\")\n//};\n" },
 		{ "Large.DisplayName", "Large (128*128)" },
 		{ "Large.Name", "ESteamAvatarSize::Large" },
 		{ "Medium.DisplayName", "Medium (64*64)" },
@@ -1512,7 +1599,6 @@ void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 		{ "ModuleRelativePath", "Public/SteamEnums.h" },
 		{ "Small.DisplayName", "Small (32*32)" },
 		{ "Small.Name", "ESteamAvatarSize::Small" },
-		{ "ToolTip", "UENUM(BlueprintType)\nenum class ESteamPersonaState : uint8\n{\n       Offline = 0 UMETA(DisplayName = \"Offline\"),\n       Online = 1 UMETA(DisplayName = \"Online\"),\n       Busy = 2 UMETA(DisplayName = \"Busy\"),\n       Away = 3 UMETA(DisplayName = \"Away\"),\n       Snooze = 4 UMETA(DisplayName = \"Snooze\"),\n       LookingToTrade = 5 UMETA(DisplayName = \"LookingToTrade\"),\n       LookingToPlay = 6 UMETA(DisplayName = \"LookingToPlay\"),\n       Max UMETA(DisplayName = \"Max\")\n};\n\nUENUM(BlueprintType)\nenum class ESteamFriendRelationship : uint8\n{\n       None = 0 UMETA(DisplayName = \"None\"),\n       Blocked = 1 UMETA(DisplayName = \"Blocked\"),\n       RequestRecipient = 2 UMETA(DisplayName = \"RequestRecipient\"),\n       Friend = 3 UMETA(DisplayName = \"Friend\"),\n       RequestInitiator = 4 UMETA(DisplayName = \"RequestInitiator\"),\n       Ignored = 5 UMETA(DisplayName = \"Ignored\"),\n       IgnoredFriend = 6 UMETA(DisplayName = \"IgnoredFriend\"),\n       Max = 8 UMETA(DisplayName = \"Max\")\n};" },
 	};
 #endif
 	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SteamAPI_BPL_Plugin_ESteamAvatarSize_Statics::EnumParams = {
@@ -5058,7 +5144,8 @@ void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 		{ ESteamOverlayToStoreFlag_StaticEnum, TEXT("ESteamOverlayToStoreFlag"), &Z_Registration_Info_UEnum_ESteamOverlayToStoreFlag, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1328906759U) },
 		{ ESteamChatEntryType_StaticEnum, TEXT("ESteamChatEntryType"), &Z_Registration_Info_UEnum_ESteamChatEntryType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4212727605U) },
 		{ ESteamFriendFlags_StaticEnum, TEXT("ESteamFriendFlags"), &Z_Registration_Info_UEnum_ESteamFriendFlags, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 3340306653U) },
-		{ ESteamAvatarSize_StaticEnum, TEXT("ESteamAvatarSize"), &Z_Registration_Info_UEnum_ESteamAvatarSize, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2495308715U) },
+		{ ESteamAccountType_StaticEnum, TEXT("ESteamAccountType"), &Z_Registration_Info_UEnum_ESteamAccountType, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1838838379U) },
+		{ ESteamAvatarSize_StaticEnum, TEXT("ESteamAvatarSize"), &Z_Registration_Info_UEnum_ESteamAvatarSize, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 163377479U) },
 		{ ESteamUserRestrictions_StaticEnum, TEXT("ESteamUserRestrictions"), &Z_Registration_Info_UEnum_ESteamUserRestrictions, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 1583168043U) },
 		{ ESteamChatRoomEnterResponse_StaticEnum, TEXT("ESteamChatRoomEnterResponse"), &Z_Registration_Info_UEnum_ESteamChatRoomEnterResponse, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 4102373091U) },
 		{ ESteamHTMLKeyModifiers_StaticEnum, TEXT("ESteamHTMLKeyModifiers"), &Z_Registration_Info_UEnum_ESteamHTMLKeyModifiers, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2787491891U) },
@@ -5104,7 +5191,7 @@ void EmptyLinkFunctionForGeneratedCodeSteamEnums() {}
 		{ ESteamRemoteStoragePublishedFileVisibility_StaticEnum, TEXT("ESteamRemoteStoragePublishedFileVisibility"), &Z_Registration_Info_UEnum_ESteamRemoteStoragePublishedFileVisibility, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2061391120U) },
 		{ ESteamItemStatistic_StaticEnum, TEXT("ESteamItemStatistic"), &Z_Registration_Info_UEnum_ESteamItemStatistic, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2690174746U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h_3305987207(TEXT("/Script/SteamAPI_BPL_Plugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h_3317469952(TEXT("/Script/SteamAPI_BPL_Plugin"),
 		nullptr, 0,
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h_Statics::EnumInfo));

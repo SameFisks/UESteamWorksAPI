@@ -153,40 +153,40 @@ FSteamAPICall UISteamFriends::DownloadClanActivityCounts(TArray<FSteamID>& Steam
 }
 
 // #NOTE: This should work, but the reason of failure is k_ESteamAPICallFailureSteamGone so I'm assuming it's where this method isn't async
-//TArray<FSteamID> UISteamFriends::EnumerateFollowingList() const
-//{
-//	int32 ResultCount = 0;
-//	FriendsEnumerateFollowingList_t Result;
-//	TArray<FSteamID> SteamIDs;
-//
-//	do
-//	{
-//		if (SteamAPICall_t ResultHandle = SteamFriends()->EnumerateFollowingList(ResultCount))
-//		{
-//			if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "LOL");
-//			bool bTmpResult;
-//			if (SteamUtils()->GetAPICallResult(ResultHandle, &Result, sizeof(Result), Result.k_iCallback, &bTmpResult))
-//			{
-//				if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "LOL2");
-//				ResultCount += Result.m_nResultsReturned;
-//				for (const auto& id : Result.m_rgSteamID)
-//				{
-//					if (id.IsValid())
-//					{
-//						SteamIDs.Add(id.ConvertToUint64());
-//					}
-//				}
-//			}
-//
-//			ESteamAPICallFailure_ reason = (ESteamAPICallFailure_)((uint8)SteamUtils()->GetAPICallFailureReason(ResultHandle) - 1);
-//
-//			if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, USteamUtils::GetEnumValueAsString<ESteamAPICallFailure_>("ESteamAPICallFailure_", reason));
-//
-//		}
-//	} while (ResultCount < Result.m_nTotalResultCount);
-//
-//	return SteamIDs;
-//}
+TArray<FSteamID> UISteamFriends::EnumerateFollowingList() const
+{
+	int32 ResultCount = 0;
+	FriendsEnumerateFollowingList_t Result;
+	TArray<FSteamID> SteamIDs;
+
+	do
+	{
+		if (SteamAPICall_t ResultHandle = SteamFriends()->EnumerateFollowingList(ResultCount))
+		{
+			if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "LOL");
+			bool bTmpResult;
+			if (SteamUtils()->GetAPICallResult(ResultHandle, &Result, sizeof(Result), Result.k_iCallback, &bTmpResult))
+			{
+				if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, "LOL2");
+				ResultCount += Result.m_nResultsReturned;
+				for (const auto& id : Result.m_rgSteamID)
+				{
+					if (id.IsValid())
+					{
+						SteamIDs.Add(id.ConvertToUint64());
+					}
+				}
+			}
+
+			ESteamAPICallFailure_ reason = (ESteamAPICallFailure_)((uint8)SteamUtils()->GetAPICallFailureReason(ResultHandle) - 1);
+
+			if (GEngine) GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Orange, USteamUtils::GetEnumValueAsString<ESteamAPICallFailure_>("ESteamAPICallFailure_", reason));
+
+		}
+	} while (ResultCount < Result.m_nTotalResultCount);
+
+	return SteamIDs;
+}
 
 int32 UISteamFriends::GetClanChatMessage(FSteamID SteamIDClanChat, int32 MessageID, FString& Message, ESteamChatEntryType& ChatEntryType, FSteamID& SteamIDChatter)
 {

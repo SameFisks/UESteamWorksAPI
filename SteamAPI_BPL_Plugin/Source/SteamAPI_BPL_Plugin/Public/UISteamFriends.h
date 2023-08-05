@@ -170,8 +170,8 @@ public:
 	UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
 		FSteamAPICall DownloadClanActivityCounts(TArray<FSteamID>& SteamClanIDs, int32 ClansToRequest = 1) const;
 
-	/*UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "SteamAPI|UISteamFriends")
-	TArray<FSteamID> EnumerateFollowingList() const;*/
+	UFUNCTION(BlueprintCallable, BlueprintPure = false, Category = "SteamAPI|UISteamFriends")
+	TArray<FSteamID> EnumerateFollowingList() const;
 
 	/**
 	 * Gets the Steam ID at the given index in a Steam group chat.
@@ -833,6 +833,21 @@ public:
 	 */
 	UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
 		bool SetRichPresence(const FString& Key, const FString& Value) const { return SteamFriends()->SetRichPresence(TCHAR_TO_UTF8(*Key), TCHAR_TO_UTF8(*Value)); }
+
+
+	//UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
+	//	bool RequestEquippedProfileItems(CSteamID steamID); 
+
+
+	//UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
+	//	bool BHasEquippedProfileItem(CSteamID steamID, ECommunityProfileItemType itemType);
+
+	//UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
+	//	bool GetProfileItemPropertyString(CSteamID steamID, ECommunityProfileItemType itemType, ECommunityProfileItemProperty prop);
+
+	//UFUNCTION(BlueprintPure, Category = "SteamAPI|UISteamFriends")
+	//	bool GetProfileItemPropertyUint(CSteamID steamID, ECommunityProfileItemType itemType, ECommunityProfileItemProperty prop);
+
 
 	/** Delegates */
 

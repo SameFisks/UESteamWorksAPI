@@ -16,7 +16,6 @@ ISteamFriends | :x: | 90% |
 ISteamApps | :x: |10% | 
 ISteamAppTicket | :x: |10% | 
 ISteamClient | :x: |10% | 
-ISteamController | :x: |10% | 
 ISteamGameServer | :x: |80% | 
 ISteamGameServerStats | :x: | 80% | 
 ISteamHTMLSurface | :x: | 80% | 

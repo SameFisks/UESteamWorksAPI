@@ -23,6 +23,7 @@ void EmptyLinkFunctionForGeneratedCodeSteamStructs() {}
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHHTMLBrowser();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHServerListRequest();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHServerQuery();
+	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHSteamPipe();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHSteamUser();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHTTPCookieContainerHandle();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FHTTPRequestHandle();
@@ -32,6 +33,7 @@ void EmptyLinkFunctionForGeneratedCodeSteamStructs() {}
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FInputHandle();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FInt16();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FInt32();
+	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FISteamAppList();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FPartyBeaconID();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FPublishedFileId();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FPublishedFileUpdateHandle();
@@ -57,6 +59,7 @@ void EmptyLinkFunctionForGeneratedCodeSteamStructs() {}
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUGCHandle();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUGCQueryHandle();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUGCUpdateHandle();
+	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUint16();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUint32();
 	STEAMAPI_BPL_PLUGIN_API UScriptStruct* Z_Construct_UScriptStruct_FUint64();
 	UPackage* Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin();
@@ -164,6 +167,58 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FUint32>()
 			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_Uint32.InnerSingleton, Z_Construct_UScriptStruct_FUint32_Statics::ReturnStructParams);
 		}
 		return Z_Registration_Info_UScriptStruct_Uint32.InnerSingleton;
+	}
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_Uint16;
+class UScriptStruct* FUint16::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_Uint16.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_Uint16.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FUint16, (UObject*)Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin(), TEXT("Uint16"));
+	}
+	return Z_Registration_Info_UScriptStruct_Uint16.OuterSingleton;
+}
+template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FUint16>()
+{
+	return FUint16::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FUint16_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FUint16_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/SteamStructs.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FUint16_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FUint16>();
+	}
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FUint16_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin,
+		nullptr,
+		&NewStructOps,
+		"Uint16",
+		sizeof(FUint16),
+		alignof(FUint16),
+		nullptr,
+		0,
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FUint16_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FUint16_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FUint16()
+	{
+		if (!Z_Registration_Info_UScriptStruct_Uint16.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_Uint16.InnerSingleton, Z_Construct_UScriptStruct_FUint16_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_Uint16.InnerSingleton;
 	}
 	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_Int32;
 class UScriptStruct* FInt32::StaticStruct()
@@ -665,6 +720,116 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FHSteamUser>()
 			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_HSteamUser.InnerSingleton, Z_Construct_UScriptStruct_FHSteamUser_Statics::ReturnStructParams);
 		}
 		return Z_Registration_Info_UScriptStruct_HSteamUser.InnerSingleton;
+	}
+
+static_assert(std::is_polymorphic<FHSteamPipe>() == std::is_polymorphic<FUint32>(), "USTRUCT FHSteamPipe cannot be polymorphic unless super FUint32 is polymorphic");
+
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_HSteamPipe;
+class UScriptStruct* FHSteamPipe::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_HSteamPipe.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_HSteamPipe.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FHSteamPipe, (UObject*)Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin(), TEXT("HSteamPipe"));
+	}
+	return Z_Registration_Info_UScriptStruct_HSteamPipe.OuterSingleton;
+}
+template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FHSteamPipe>()
+{
+	return FHSteamPipe::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FHSteamPipe_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FHSteamPipe_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/SteamStructs.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FHSteamPipe_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FHSteamPipe>();
+	}
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FHSteamPipe_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin,
+		Z_Construct_UScriptStruct_FUint32,
+		&NewStructOps,
+		"HSteamPipe",
+		sizeof(FHSteamPipe),
+		alignof(FHSteamPipe),
+		nullptr,
+		0,
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FHSteamPipe_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FHSteamPipe_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FHSteamPipe()
+	{
+		if (!Z_Registration_Info_UScriptStruct_HSteamPipe.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_HSteamPipe.InnerSingleton, Z_Construct_UScriptStruct_FHSteamPipe_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_HSteamPipe.InnerSingleton;
+	}
+
+static_assert(std::is_polymorphic<FISteamAppList>() == std::is_polymorphic<FUint32>(), "USTRUCT FISteamAppList cannot be polymorphic unless super FUint32 is polymorphic");
+
+	static FStructRegistrationInfo Z_Registration_Info_UScriptStruct_ISteamAppList;
+class UScriptStruct* FISteamAppList::StaticStruct()
+{
+	if (!Z_Registration_Info_UScriptStruct_ISteamAppList.OuterSingleton)
+	{
+		Z_Registration_Info_UScriptStruct_ISteamAppList.OuterSingleton = GetStaticStruct(Z_Construct_UScriptStruct_FISteamAppList, (UObject*)Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin(), TEXT("ISteamAppList"));
+	}
+	return Z_Registration_Info_UScriptStruct_ISteamAppList.OuterSingleton;
+}
+template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FISteamAppList>()
+{
+	return FISteamAppList::StaticStruct();
+}
+	struct Z_Construct_UScriptStruct_FISteamAppList_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
+#endif
+		static void* NewStructOps();
+		static const UECodeGen_Private::FStructParams ReturnStructParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FISteamAppList_Statics::Struct_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "ModuleRelativePath", "Public/SteamStructs.h" },
+	};
+#endif
+	void* Z_Construct_UScriptStruct_FISteamAppList_Statics::NewStructOps()
+	{
+		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FISteamAppList>();
+	}
+	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FISteamAppList_Statics::ReturnStructParams = {
+		(UObject* (*)())Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin,
+		Z_Construct_UScriptStruct_FUint32,
+		&NewStructOps,
+		"ISteamAppList",
+		sizeof(FISteamAppList),
+		alignof(FISteamAppList),
+		nullptr,
+		0,
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EStructFlags(0x00000001),
+		METADATA_PARAMS(Z_Construct_UScriptStruct_FISteamAppList_Statics::Struct_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FISteamAppList_Statics::Struct_MetaDataParams))
+	};
+	UScriptStruct* Z_Construct_UScriptStruct_FISteamAppList()
+	{
+		if (!Z_Registration_Info_UScriptStruct_ISteamAppList.InnerSingleton)
+		{
+			UECodeGen_Private::ConstructUScriptStruct(Z_Registration_Info_UScriptStruct_ISteamAppList.InnerSingleton, Z_Construct_UScriptStruct_FISteamAppList_Statics::ReturnStructParams);
+		}
+		return Z_Registration_Info_UScriptStruct_ISteamAppList.InnerSingleton;
 	}
 
 static_assert(std::is_polymorphic<FAppID>() == std::is_polymorphic<FUint32>(), "USTRUCT FAppID cannot be polymorphic unless super FUint32 is polymorphic");
@@ -3068,6 +3233,7 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FSteamItemPriceDa
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo[] = {
 		{ FUint64::StaticStruct, Z_Construct_UScriptStruct_FUint64_Statics::NewStructOps, TEXT("Uint64"), &Z_Registration_Info_UScriptStruct_Uint64, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint64), 584683676U) },
 		{ FUint32::StaticStruct, Z_Construct_UScriptStruct_FUint32_Statics::NewStructOps, TEXT("Uint32"), &Z_Registration_Info_UScriptStruct_Uint32, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint32), 3715311042U) },
+		{ FUint16::StaticStruct, Z_Construct_UScriptStruct_FUint16_Statics::NewStructOps, TEXT("Uint16"), &Z_Registration_Info_UScriptStruct_Uint16, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint16), 893350793U) },
 		{ FInt32::StaticStruct, Z_Construct_UScriptStruct_FInt32_Statics::NewStructOps, TEXT("Int32"), &Z_Registration_Info_UScriptStruct_Int32, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInt32), 398366963U) },
 		{ FInt16::StaticStruct, Z_Construct_UScriptStruct_FInt16_Statics::NewStructOps, TEXT("Int16"), &Z_Registration_Info_UScriptStruct_Int16, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FInt16), 2633809377U) },
 		{ FHServerListRequest::StaticStruct, Z_Construct_UScriptStruct_FHServerListRequest_Statics::NewStructOps, TEXT("HServerListRequest"), &Z_Registration_Info_UScriptStruct_HServerListRequest, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHServerListRequest), 2299228059U) },
@@ -3077,6 +3243,8 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FSteamItemPriceDa
 		{ FSteamInventoryUpdateHandle::StaticStruct, Z_Construct_UScriptStruct_FSteamInventoryUpdateHandle_Statics::NewStructOps, TEXT("SteamInventoryUpdateHandle"), &Z_Registration_Info_UScriptStruct_SteamInventoryUpdateHandle, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSteamInventoryUpdateHandle), 3959843940U) },
 		{ FHAuthTicket::StaticStruct, Z_Construct_UScriptStruct_FHAuthTicket_Statics::NewStructOps, TEXT("HAuthTicket"), &Z_Registration_Info_UScriptStruct_HAuthTicket, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHAuthTicket), 2885808569U) },
 		{ FHSteamUser::StaticStruct, Z_Construct_UScriptStruct_FHSteamUser_Statics::NewStructOps, TEXT("HSteamUser"), &Z_Registration_Info_UScriptStruct_HSteamUser, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHSteamUser), 1889031587U) },
+		{ FHSteamPipe::StaticStruct, Z_Construct_UScriptStruct_FHSteamPipe_Statics::NewStructOps, TEXT("HSteamPipe"), &Z_Registration_Info_UScriptStruct_HSteamPipe, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FHSteamPipe), 1783055744U) },
+		{ FISteamAppList::StaticStruct, Z_Construct_UScriptStruct_FISteamAppList_Statics::NewStructOps, TEXT("ISteamAppList"), &Z_Registration_Info_UScriptStruct_ISteamAppList, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FISteamAppList), 2838909434U) },
 		{ FAppID::StaticStruct, Z_Construct_UScriptStruct_FAppID_Statics::NewStructOps, TEXT("AppID"), &Z_Registration_Info_UScriptStruct_AppID, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAppID), 1120977555U) },
 		{ FAccountID::StaticStruct, Z_Construct_UScriptStruct_FAccountID_Statics::NewStructOps, TEXT("AccountID"), &Z_Registration_Info_UScriptStruct_AccountID, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FAccountID), 2096624723U) },
 		{ FScreenshotHandle::StaticStruct, Z_Construct_UScriptStruct_FScreenshotHandle_Statics::NewStructOps, TEXT("ScreenshotHandle"), &Z_Registration_Info_UScriptStruct_ScreenshotHandle, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FScreenshotHandle), 88635965U) },
@@ -3109,7 +3277,7 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FSteamItemPriceDa
 		{ FSteamUGCDetails::StaticStruct, Z_Construct_UScriptStruct_FSteamUGCDetails_Statics::NewStructOps, TEXT("SteamUGCDetails"), &Z_Registration_Info_UScriptStruct_SteamUGCDetails, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSteamUGCDetails), 612446499U) },
 		{ FSteamItemPriceData::StaticStruct, Z_Construct_UScriptStruct_FSteamItemPriceData_Statics::NewStructOps, TEXT("SteamItemPriceData"), &Z_Registration_Info_UScriptStruct_SteamItemPriceData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSteamItemPriceData), 134755886U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_3912185555(TEXT("/Script/SteamAPI_BPL_Plugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_2679788623(TEXT("/Script/SteamAPI_BPL_Plugin"),
 		nullptr, 0,
 		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo),
 		nullptr, 0);

@@ -334,6 +334,24 @@ enum class ESteamFriendFlags : uint8
 //};
 
 UENUM(BlueprintType)
+enum class ESteamAccountType : uint8
+{
+	Invalid UMETA(DisplayName = "Invalid"),
+	Individual UMETA(DisplayName = "Individual"),
+	Multiseat UMETA(DisplayName = "Multiseat"),
+	GameServer UMETA(DisplayName = "GameServer"),
+	AnonGameServer UMETA(DisplayName = "AnonGameServer"),
+	Pending UMETA(DisplayName = "Pending"),
+	ContentServer UMETA(DisplayName = "ContentServer"),
+	Clan UMETA(DisplayName = "Clan"),
+	Chat UMETA(DisplayName = "Chat"),
+	ConsoleUser UMETA(DisplayName = "ConsoleUser"),
+	AnonUser UMETA(DisplayName = "AnonUser"),
+	Max UMETA(DisplayName = "Max")
+};
+
+
+UENUM(BlueprintType)
 enum class ESteamAvatarSize : uint8
 {
 	Small UMETA(DisplayName = "Small (32*32)"),
