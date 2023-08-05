@@ -1,44 +1,70 @@
 {
 	"RemapUnityFiles": 
 	{
-		"Module.SteamAPI_BPL_Plugin.cpp.obj": [
+		"Module.SteamAPI_BPL_Plugin.1_of_8.cpp.obj": [
 			"SteamAPI_BPL_Plugin.init.gen.cpp.obj",
 			"SteamAPI_BPL_PluginBPLibrary.gen.cpp.obj",
+			"SteamEnums.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.2_of_8.cpp.obj": [
+			"SteamStructs.gen.cpp.obj",
 			"UISteamApps.gen.cpp.obj",
 			"UISteamAppTicket.gen.cpp.obj",
 			"UISteamClient.gen.cpp.obj",
 			"UISteamController.gen.cpp.obj",
-			"UISteamFriends.gen.cpp.obj",
+			"UISteamFriends.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.3_of_8.cpp.obj": [
 			"UISteamGameCoordinator.gen.cpp.obj",
 			"UISteamGameServer.gen.cpp.obj",
 			"UISteamGameServerStats.gen.cpp.obj",
-			"UISteamHTMLSurface.gen.cpp.obj",
+			"UISteamHTMLSurface.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.4_of_8.cpp.obj": [
 			"UISteamHTTP.gen.cpp.obj",
 			"UISteamInput.gen.cpp.obj",
-			"UISteamInventory.gen.cpp.obj",
+			"UISteamInventory.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.5_of_8.cpp.obj": [
 			"UISteamMatchmaking.gen.cpp.obj",
 			"UISteamMatchmakingServers.gen.cpp.obj",
 			"UISteamMusic.gen.cpp.obj",
-			"UISteamMusicRemote.gen.cpp.obj",
+			"UISteamMusicRemote.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.6_of_8.cpp.obj": [
 			"UISteamNetworking.gen.cpp.obj",
 			"UISteamNetworkingSockets.gen.cpp.obj",
 			"UISteamNetworkingUtils.gen.cpp.obj",
 			"UISteamRemotePlay.gen.cpp.obj",
 			"UISteamRemoteStorage.gen.cpp.obj",
 			"UISteamScreenshots.gen.cpp.obj",
-			"UISteamUGC.gen.cpp.obj",
+			"UISteamUGC.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.7_of_8.cpp.obj": [
 			"UISteamUser.gen.cpp.obj",
-			"UISteamUserStats.gen.cpp.obj",
+			"UISteamUserStats.gen.cpp.obj"
+		],
+		"Module.SteamAPI_BPL_Plugin.8_of_8.cpp.obj": [
 			"UISteamUtils.gen.cpp.obj",
 			"UISteamVideo.gen.cpp.obj",
 			"USteamEncryptedAppTicket.gen.cpp.obj",
+			"USteamUtils.gen.cpp.obj",
 			"Usteam_api.gen.cpp.obj",
 			"Usteam_gameserver.gen.cpp.obj",
-			"UISteamApps.cpp.obj",
+			"SteamAPI_BPL_PluginBPLibrary.cpp.obj",
 			"UISteamAppTicket.cpp.obj",
 			"UISteamClient.cpp.obj",
 			"UISteamController.cpp.obj",
 			"UISteamGameCoordinator.cpp.obj",
+			"UISteamNetworking.cpp.obj",
+			"UISteamNetworkingSockets.cpp.obj",
+			"UISteamNetworkingUtils.cpp.obj",
+			"USteamEncryptedAppTicket.cpp.obj",
+			"Usteam_api.cpp.obj",
+			"Usteam_gameserver.cpp.obj",
+			"SteamAPI_BPL_Plugin.cpp.obj",
+			"UISteamApps.cpp.obj",
+			"UISteamFriends.cpp.obj",
 			"UISteamGameServer.cpp.obj",
 			"UISteamGameServerStats.cpp.obj",
 			"UISteamHTMLSurface.cpp.obj",
@@ -49,23 +75,15 @@
 			"UISteamMatchmakingServers.cpp.obj",
 			"UISteamMusic.cpp.obj",
 			"UISteamMusicRemote.cpp.obj",
-			"UISteamNetworking.cpp.obj",
-			"UISteamNetworkingSockets.cpp.obj",
-			"UISteamNetworkingUtils.cpp.obj",
 			"UISteamRemotePlay.cpp.obj",
 			"UISteamRemoteStorage.cpp.obj",
 			"UISteamScreenshots.cpp.obj",
 			"UISteamUGC.cpp.obj",
 			"UISteamUser.cpp.obj",
 			"UISteamUserStats.cpp.obj",
+			"UISteamUtils.cpp.obj",
 			"UISteamVideo.cpp.obj",
-			"USteamEncryptedAppTicket.cpp.obj",
-			"Usteam_api.cpp.obj",
-			"Usteam_gameserver.cpp.obj",
-			"SteamAPI_BPL_Plugin.cpp.obj",
-			"SteamAPI_BPL_PluginBPLibrary.cpp.obj",
-			"UISteamFriends.cpp.obj",
-			"UISteamUtils.cpp.obj"
+			"USteamUtils.cpp.obj"
 		]
 	}
 }

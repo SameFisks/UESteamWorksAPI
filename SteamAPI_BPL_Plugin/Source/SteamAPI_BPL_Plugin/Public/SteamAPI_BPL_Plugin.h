@@ -3,11 +3,10 @@
 #pragma once
 
 #include "Modules/ModuleManager.h"
-#pragma warning(push)
-#pragma warning(disable: 4996)
+
 #include "SteamAPI_BPL_PluginBPLibrary.h"
-#include "../Steam/steam_api.h"
-#pragma warning(pop)
+#include "Steam.h"
+
 
 #define RAW_APP_ID "480"
 

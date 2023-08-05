@@ -1,6 +1,6 @@
-C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp
+C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp
 /I .
-/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Source\SteamAPI_BPL_Plugin\Private
+/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Source\SteamAPI_BPL_Plugin\Private
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\CoreUObject\UHT
 /I Runtime\CoreUObject\Public
 /I Runtime
@@ -273,9 +273,9 @@ C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plug
 /I Runtime\MovieSceneCapture\Public
 /I ..\Intermediate\Build\Win64\UnrealEditor\Inc\AnimationDataController\UHT
 /I Developer\AnimationDataController\Public
-/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\UnrealEditor\Inc\SteamAPI_BPL_Plugin\UHT
-/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Source
-/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Source\SteamAPI_BPL_Plugin\Public
+/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\UnrealEditor\Inc\SteamAPI_BPL_Plugin\UHT
+/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Source
+/I C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Source\SteamAPI_BPL_Plugin\Public
 /external:W0
 /external:I ThirdParty\mimalloc\include
 /external:I ThirdParty\LibTiff\Source\Win64
@@ -285,12 +285,12 @@ C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plug
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/FI"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Definitions.SteamAPI_BPL_Plugin.h"
-/Yu"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"..\Intermediate\Build\Win64\x64\UnrealEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-/Fo"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp.obj"
-/sourceDependencies C:\Users\carl.uvebrant\Perforce\SameFisk_Home_WorldWar\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp.dep.json
+/FI"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Intermediate\Build\Win64\x64\SteamSDKWrapperEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
+/FI"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Definitions.SteamAPI_BPL_Plugin.h"
+/Yu"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Intermediate\Build\Win64\x64\SteamSDKWrapperEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h"
+/Fp"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Intermediate\Build\Win64\x64\SteamSDKWrapperEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.InclOrderUnreal5_1.h.pch"
+/Fo"C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp.obj"
+/sourceDependencies C:\Users\carl.uvebrant\Perforce\SameFisk_Home_SteamAPI\Plugins\SteamAPI_BPL_Plugin\Intermediate\Build\Win64\x64\UnrealEditor\Development\SteamAPI_BPL_Plugin\Module.SteamAPI_BPL_Plugin.cpp.dep.json
 /Zc:inline
 /nologo
 /Oi
