@@ -21,6 +21,16 @@ bool UISteamUtils::Init()
 	return FSteamAPI_BPL_PluginModule::Get().SteamInit();
 }
 
+void UISteamUtils::RestartAppIfNecessary()
+{
+	FSteamAPI_BPL_PluginModule::Get().SteamRestartAppIfNecessary();
+}
+
+bool UISteamUtils::Shutdown()
+{
+	return FSteamAPI_BPL_PluginModule::Get().SteamShutdown();
+}
+
 TArray<FSteamPlayerInfo> UISteamUtils::GetFriends()
 {
 	TArray<FSteamPlayerInfo> Friends;

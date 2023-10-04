@@ -35,7 +35,7 @@
 //{
 //
 //
-//	CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetMyID();
+//	CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetSteamID();
 //
 //	const FString DialogName = EnumToString(TEXT("ESteamUserOverlayType"), static_cast<uint8>(DialogType));
 //	SteamFriends()->ActivateGameOverlayToUser(TCHAR_TO_UTF8(*DialogName), SteamId);
@@ -256,7 +256,7 @@
 //	//virtual bool RequestUserInformation( CSteamID steamIDUser, bool bRequireNameOnly ) = 0;
 //
 //
-//	CSteamID SteamID = FSteamAPI_BPL_PluginModule::Get().GetMyID();
+//	CSteamID SteamID = FSteamAPI_BPL_PluginModule::Get().GetSteamID();
 //	int Picture = 0;
 //
 //	switch (AvatarSize)
@@ -431,7 +431,7 @@
 //{
 //	if (SteamAPI_Init())
 //	{
-//		CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetMyID();
+//		CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetSteamID();
 //
 //		const FString DialogName = EnumToString(TEXT("ESteamUserOverlayType"), static_cast<uint8>(DialogType));
 //		SteamFriends()->ActivateGameOverlayToUser(TCHAR_TO_UTF8(*DialogName), SteamId);

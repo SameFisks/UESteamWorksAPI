@@ -29,13 +29,19 @@ public:
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam Init", Keywords = "Steam Init"), Category = "SteamAPI|ISteamUtils")
 		static bool Init();
 
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam RestartAppIfNecessary", Keywords = "Steam RestartAppIfNecessary"), Category = "SteamAPI|ISteamUtils")
+		static void RestartAppIfNecessary();
+
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam Shutdown", Keywords = "Steam Shutdown"), Category = "SteamAPI|ISteamUtils")
+		static bool Shutdown();
+
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam GetFriends", Keywords = "Steam GetFriends"), Category = "SteamAPI|ISteamUtils")
 		static TArray<FSteamPlayerInfo> GetFriends();
 
 	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam BOverlayNeedsPresent", Keywords = "Steam BOverlayNeedsPresent"), Category = "SteamAPI|ISteamUtils")
 		static bool BOverlayNeedsPresent();
 
-	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam GetAppID", Keywords = "Steam GetAppID"), Category = "SteamAPI|ISteamUtils")
+	UFUNCTION(BlueprintCallable, meta = (DisplayName = "Steam GetSteamAppID", Keywords = "Steam GetSteamAppID"), Category = "SteamAPI|ISteamUtils")
 		static int32 GetAppID();
 
 	/**

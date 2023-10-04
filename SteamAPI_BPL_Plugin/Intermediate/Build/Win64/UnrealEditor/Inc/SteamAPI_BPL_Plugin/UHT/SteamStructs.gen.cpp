@@ -3226,11 +3226,11 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FSteamItemPriceDa
 		}
 		return Z_Registration_Info_UScriptStruct_SteamItemPriceData.InnerSingleton;
 	}
-	struct Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics
 	{
 		static const FStructRegisterCompiledInInfo ScriptStructInfo[];
 	};
-	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo[] = {
+	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo[] = {
 		{ FUint64::StaticStruct, Z_Construct_UScriptStruct_FUint64_Statics::NewStructOps, TEXT("Uint64"), &Z_Registration_Info_UScriptStruct_Uint64, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint64), 584683676U) },
 		{ FUint32::StaticStruct, Z_Construct_UScriptStruct_FUint32_Statics::NewStructOps, TEXT("Uint32"), &Z_Registration_Info_UScriptStruct_Uint32, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint32), 3715311042U) },
 		{ FUint16::StaticStruct, Z_Construct_UScriptStruct_FUint16_Statics::NewStructOps, TEXT("Uint16"), &Z_Registration_Info_UScriptStruct_Uint16, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FUint16), 893350793U) },
@@ -3277,8 +3277,8 @@ template<> STEAMAPI_BPL_PLUGIN_API UScriptStruct* StaticStruct<FSteamItemPriceDa
 		{ FSteamUGCDetails::StaticStruct, Z_Construct_UScriptStruct_FSteamUGCDetails_Statics::NewStructOps, TEXT("SteamUGCDetails"), &Z_Registration_Info_UScriptStruct_SteamUGCDetails, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSteamUGCDetails), 612446499U) },
 		{ FSteamItemPriceData::StaticStruct, Z_Construct_UScriptStruct_FSteamItemPriceData_Statics::NewStructOps, TEXT("SteamItemPriceData"), &Z_Registration_Info_UScriptStruct_SteamItemPriceData, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FSteamItemPriceData), 134755886U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_2679788623(TEXT("/Script/SteamAPI_BPL_Plugin"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_2679788623(TEXT("/Script/SteamAPI_BPL_Plugin"),
 		nullptr, 0,
-		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo),
+		Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamStructs_h_Statics::ScriptStructInfo),
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -314,9 +314,10 @@ struct  FSteamInputAnalogActionData
 	UPROPERTY(BlueprintReadWrite)
 		bool bActive;
 
-	FSteamInputAnalogActionData() {}
-	FSteamInputAnalogActionData(ESteamControllerSourceMode mode, float x, float y, bool bactive) :
-		Mode(mode), X(x), Y(y), bActive(bactive) {}
+		FSteamInputAnalogActionData()
+			: Mode(ESteamControllerSourceMode::None), X(0.0f), Y(0.0f), bActive(false) {}
+		FSteamInputAnalogActionData(ESteamControllerSourceMode InMode, float InX, float InY, bool InbActive)
+			: Mode(InMode), X(InX), Y(InY), bActive(InbActive) {}
 };
 
 USTRUCT(BlueprintType)
@@ -330,9 +331,10 @@ struct  FSteamInputDigitalActionData
 	UPROPERTY(BlueprintReadWrite)
 		bool bActive;
 
-	FSteamInputDigitalActionData() {}
-	FSteamInputDigitalActionData(bool bstate, bool bactive) :
-		bState(bstate), bActive(bactive) {}
+		FSteamInputDigitalActionData()
+			: bState(false), bActive(false) {}
+		FSteamInputDigitalActionData(bool InbState, bool InbActive)
+			: bState(InbState), bActive(InbActive) {}
 };
 
 USTRUCT(BlueprintType)
@@ -349,9 +351,10 @@ struct  FSteamInputMotionData
 	UPROPERTY(BlueprintReadWrite)
 		FVector RotVel;
 
-	FSteamInputMotionData() {}
-	FSteamInputMotionData(const FQuat& quat, const FVector& pos, const FVector& rotvel) :
-		RotQuat(quat), PosAccel(pos), RotVel(rotvel) {}
+		FSteamInputMotionData()
+			: RotQuat(FQuat::Identity), PosAccel(FVector::ZeroVector), RotVel(FVector::ZeroVector) {}
+		FSteamInputMotionData(const FQuat& InRotQuat, const FVector& InPosAccel, const FVector& InRotVel)
+			: RotQuat(InRotQuat), PosAccel(InPosAccel), RotVel(InRotVel) {}
 };
 
 USTRUCT(BlueprintType)
@@ -371,27 +374,32 @@ struct  FSteamItemDetails
 	UPROPERTY(BlueprintReadWrite)
 		TArray<ESteamItemFlags_> Flags;
 
-	FSteamItemDetails() {}
-	FSteamItemDetails(FSteamItemInstanceID instance, FSteamItemDef itemdef, int32 quantity, const TArray<ESteamItemFlags_>& flags) :
-		ItemID(instance), Definition(itemdef), Quantity(quantity), Flags(flags) {}
-	FSteamItemDetails(const SteamItemDetails_t& details)
-	{
-		ItemID = details.m_itemId;
-		Definition = details.m_iDefinition;
-		Quantity = details.m_unQuantity;
-		if (details.m_unFlags & 1 << (int32)ESteamItemFlags_::NoTrade)
+		FSteamItemDetails()
+			: ItemID(0), Definition(0), Quantity(0), Flags({}) {}
+
+		FSteamItemDetails(FSteamItemInstanceID InItemID, FSteamItemDef InDefinition, int32 InQuantity, const TArray<ESteamItemFlags_>& InFlags)
+			: ItemID(InItemID), Definition(InDefinition), Quantity(InQuantity), Flags(InFlags) {}
+
+		FSteamItemDetails(const SteamItemDetails_t& InDetails)
 		{
-			Flags.Add(ESteamItemFlags_::NoTrade);
+			ItemID = InDetails.m_itemId;
+			Definition = InDetails.m_iDefinition;
+			Quantity = InDetails.m_unQuantity;
+			Flags.Empty();
+
+			if (InDetails.m_unFlags & (1 << (int32)ESteamItemFlags_::NoTrade))
+			{
+				Flags.Add(ESteamItemFlags_::NoTrade);
+			}
+			if (InDetails.m_unFlags & (1 << (int32)ESteamItemFlags_::ItemRemoved))
+			{
+				Flags.Add(ESteamItemFlags_::ItemRemoved);
+			}
+			if (InDetails.m_unFlags & (1 << (int32)ESteamItemFlags_::ItemConsumed))
+			{
+				Flags.Add(ESteamItemFlags_::ItemConsumed);
+			}
 		}
-		if (details.m_unFlags & 1 << (int32)ESteamItemFlags_::ItemRemoved)
-		{
-			Flags.Add(ESteamItemFlags_::ItemRemoved);
-		}
-		if (details.m_unFlags & 1 << (int32)ESteamItemFlags_::ItemConsumed)
-		{
-			Flags.Add(ESteamItemFlags_::ItemConsumed);
-		}
-	}
 };
 
 USTRUCT(BlueprintType)
@@ -413,11 +421,14 @@ struct  FSteamPartyBeaconLocation
 		return o;
 	}
 
-	FSteamPartyBeaconLocation() {}
-	FSteamPartyBeaconLocation(ESteamPartyBeaconLocation type, uint64 id) :
-		Type(Type), LocationID(id) {}
-	FSteamPartyBeaconLocation(const SteamPartyBeaconLocation_t& type) :
-		Type((ESteamPartyBeaconLocation)type.m_eType), LocationID(type.m_ulLocationID) {}
+	FSteamPartyBeaconLocation()
+		: Type(ESteamPartyBeaconLocation::Invalid), LocationID(0) {}
+
+	FSteamPartyBeaconLocation(ESteamPartyBeaconLocation InType, int64 InLocationID)
+		: Type(InType), LocationID(InLocationID) {}
+
+	FSteamPartyBeaconLocation(const SteamPartyBeaconLocation_t& InType)
+		: Type((ESteamPartyBeaconLocation)InType.m_eType), LocationID(InType.m_ulLocationID) {}
 };
 
 USTRUCT(BlueprintType)
@@ -440,11 +451,15 @@ struct  FSteamLeaderboardEntry
 	UPROPERTY(BlueprintReadWrite)
 		FUGCHandle UGC;
 
-	FSteamLeaderboardEntry() {}
-	FSteamLeaderboardEntry(FSteamID steamid, int32 glob, int32 score, int32 details, FUGCHandle handle) :
-		SteamIDUser(steamid), GlobalRank(glob), Score(score), Details(details), UGC(handle) {}
-	FSteamLeaderboardEntry(const LeaderboardEntry_t& type) :
-		SteamIDUser(type.m_steamIDUser.ConvertToUint64()), GlobalRank(type.m_nGlobalRank), Score(type.m_nScore), Details(type.m_cDetails), UGC(type.m_hUGC) {}
+		FSteamLeaderboardEntry()
+			: GlobalRank(0), Score(0), Details(0) {}
+
+		FSteamLeaderboardEntry(FSteamID InSteamIDUser, int32 InGlobalRank, int32 InScore, int32 InDetails, FUGCHandle InUGC)
+			: SteamIDUser(InSteamIDUser), GlobalRank(InGlobalRank), Score(InScore), Details(InDetails), UGC(InUGC) {}
+
+		FSteamLeaderboardEntry(const LeaderboardEntry_t& InType)
+			: SteamIDUser(InType.m_steamIDUser.ConvertToUint64()), GlobalRank(InType.m_nGlobalRank),
+			Score(InType.m_nScore), Details(InType.m_cDetails), UGC(InType.m_hUGC) {}
 };
 
 USTRUCT(BlueprintType)
@@ -530,14 +545,30 @@ struct  FSteamUGCDetails
 	UPROPERTY(BlueprintReadWrite)
 		int32 NumChildren;
 
-	FSteamUGCDetails() :
-		PublishedFileId(0), Result(ESteamResult::None), FileType(ESteamWorkshopFileType::Max), CreatorAppID(0), ConsumerAppID(0), Title(""), Description(""), SteamIDOwner(0), TimeCreated(0), TimeUpdated(0), TimeAddedToUserList(0), Visibility(ESteamRemoteStoragePublishedFileVisibility::Public), bBanned(false), bAcceptedForUse(false), bTagsTruncated(false), Tags({}), File(0), PreviewFile(0), FileName(""), FileSize(0), PreviewFileSize(0), URL(""), VotesUp(0), VotesDown(0), Score(0.0f), NumChildren(0) {}
 
-	FSteamUGCDetails(const SteamUGCDetails_t& data) :
-		PublishedFileId(data.m_nPublishedFileId), Result((ESteamResult)data.m_eResult), FileType((ESteamWorkshopFileType)data.m_eFileType), CreatorAppID(data.m_nCreatorAppID), ConsumerAppID(data.m_nConsumerAppID), Title(FString(UTF8_TO_TCHAR(data.m_rgchTitle))), Description(FString(UTF8_TO_TCHAR(data.m_rgchDescription))), SteamIDOwner(data.m_ulSteamIDOwner), TimeCreated(data.m_rtimeCreated), TimeUpdated(data.m_rtimeUpdated), TimeAddedToUserList(data.m_rtimeAddedToUserList), Visibility((ESteamRemoteStoragePublishedFileVisibility)data.m_eVisibility), bBanned(data.m_bBanned), bAcceptedForUse(data.m_bAcceptedForUse), bTagsTruncated(data.m_bTagsTruncated), File(data.m_hFile), PreviewFile(data.m_hPreviewFile), FileName(data.m_pchFileName), FileSize(data.m_nFileSize), PreviewFileSize(data.m_nPreviewFileSize), URL(UTF8_TO_TCHAR(data.m_rgchURL)), VotesUp(data.m_unVotesUp), VotesDown(data.m_unVotesDown), Score(data.m_flScore), NumChildren(data.m_unNumChildren)
-	{
-		FString(UTF8_TO_TCHAR(data.m_rgchTags)).ParseIntoArray(Tags, TEXT(","), true);
-	}
+		FSteamUGCDetails()
+			: Result(ESteamResult::None), FileType(ESteamWorkshopFileType::Max), CreatorAppID(0),
+			ConsumerAppID(0), SteamIDOwner(0), TimeCreated(0), TimeUpdated(0), TimeAddedToUserList(0),
+			Visibility(ESteamRemoteStoragePublishedFileVisibility::Public), bBanned(false), bAcceptedForUse(false),
+			bTagsTruncated(false), File(0), PreviewFile(0), FileSize(0), PreviewFileSize(0),
+			VotesUp(0), VotesDown(0), Score(0.0f), NumChildren(0) {}
+
+		FSteamUGCDetails(const SteamUGCDetails_t& InData)
+			: PublishedFileId(InData.m_nPublishedFileId), Result((ESteamResult)InData.m_eResult),
+			FileType((ESteamWorkshopFileType)InData.m_eFileType), CreatorAppID(InData.m_nCreatorAppID),
+			ConsumerAppID(InData.m_nConsumerAppID), Title(FString(UTF8_TO_TCHAR(InData.m_rgchTitle))),
+			Description(FString(UTF8_TO_TCHAR(InData.m_rgchDescription))), SteamIDOwner(InData.m_ulSteamIDOwner),
+			TimeCreated(InData.m_rtimeCreated), TimeUpdated(InData.m_rtimeUpdated),
+			TimeAddedToUserList(InData.m_rtimeAddedToUserList),
+			Visibility((ESteamRemoteStoragePublishedFileVisibility)InData.m_eVisibility),
+			bBanned(InData.m_bBanned), bAcceptedForUse(InData.m_bAcceptedForUse), bTagsTruncated(InData.m_bTagsTruncated),
+			File(InData.m_hFile), PreviewFile(InData.m_hPreviewFile), FileName(InData.m_pchFileName),
+			FileSize(InData.m_nFileSize), PreviewFileSize(InData.m_nPreviewFileSize),
+			URL(UTF8_TO_TCHAR(InData.m_rgchURL)), VotesUp(InData.m_unVotesUp), VotesDown(InData.m_unVotesDown),
+			Score(InData.m_flScore), NumChildren(InData.m_unNumChildren)
+		{
+			FString(UTF8_TO_TCHAR(InData.m_rgchTags)).ParseIntoArray(Tags, TEXT(","), true);
+		}
 };
 
 USTRUCT(BlueprintType)
@@ -554,6 +585,9 @@ struct  FSteamItemPriceData
 	UPROPERTY(BlueprintReadWrite)
 		int64 BasePrice;
 
-	FSteamItemPriceData() {}
-	FSteamItemPriceData(FSteamItemDef def, int64 currentPrice, int64 basePrice) : ItemDef(def), CurrentPrice(currentPrice), BasePrice(basePrice) {}
+		FSteamItemPriceData()
+			: ItemDef(0), CurrentPrice(0), BasePrice(0) {}
+
+		FSteamItemPriceData(FSteamItemDef InItemDef, int64 InCurrentPrice, int64 InBasePrice)
+			: ItemDef(InItemDef), CurrentPrice(InCurrentPrice), BasePrice(InBasePrice) {}
 };

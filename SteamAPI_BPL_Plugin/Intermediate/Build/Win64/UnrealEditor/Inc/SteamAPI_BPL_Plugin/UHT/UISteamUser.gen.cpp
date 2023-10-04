@@ -739,7 +739,7 @@ void FOnValidateAuthTicketResponseDelegate_DelegateWrapper(const FMulticastScrip
 	{
 		P_FINISH;
 		P_NATIVE_BEGIN;
-		*(FSteamID*)Z_Param__Result=P_THIS->GetSteamID();
+		*(int64*)Z_Param__Result=P_THIS->GetSteamID();
 		P_NATIVE_END;
 	}
 	DEFINE_FUNCTION(UISteamUser::execGetPlayerSteamLevel)
@@ -1711,16 +1711,16 @@ void FOnValidateAuthTicketResponseDelegate_DelegateWrapper(const FMulticastScrip
 	{
 		struct ISteamUser_eventGetSteamID_Parms
 		{
-			FSteamID ReturnValue;
+			int64 ReturnValue;
 		};
-		static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FInt64PropertyParams NewProp_ReturnValue;
 		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
-	const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UISteamUser_GetSteamID_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamUser_eventGetSteamID_Parms, ReturnValue), Z_Construct_UScriptStruct_FSteamID, METADATA_PARAMS(nullptr, 0) }; // 2174972862
+	const UECodeGen_Private::FInt64PropertyParams Z_Construct_UFunction_UISteamUser_GetSteamID_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Int64, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, STRUCT_OFFSET(ISteamUser_eventGetSteamID_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UISteamUser_GetSteamID_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UISteamUser_GetSteamID_Statics::NewProp_ReturnValue,
 	};
@@ -1762,7 +1762,7 @@ void FOnValidateAuthTicketResponseDelegate_DelegateWrapper(const FMulticastScrip
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UISteamUser_GetSteamUser_Statics::Function_MetaDataParams[] = {
 		{ "Category", "SteamAPI" },
-		{ "CompactNodeTitle", "SteaGetSteamUsermUser" },
+		{ "CompactNodeTitle", "SubSystem SteamUser" },
 		{ "DisplayName", "Get Steam User" },
 		{ "ModuleRelativePath", "Public/UISteamUser.h" },
 	};
@@ -2190,8 +2190,8 @@ void FOnValidateAuthTicketResponseDelegate_DelegateWrapper(const FMulticastScrip
 		{ &Z_Construct_UFunction_UISteamUser_GetGameBadgeLevel, "GetGameBadgeLevel" }, // 3161028982
 		{ &Z_Construct_UFunction_UISteamUser_GetHSteamUser, "GetHSteamUser" }, // 8844702
 		{ &Z_Construct_UFunction_UISteamUser_GetPlayerSteamLevel, "GetPlayerSteamLevel" }, // 1094541285
-		{ &Z_Construct_UFunction_UISteamUser_GetSteamID, "GetSteamID" }, // 3058460541
-		{ &Z_Construct_UFunction_UISteamUser_GetSteamUser, "GetSteamUser" }, // 4273809468
+		{ &Z_Construct_UFunction_UISteamUser_GetSteamID, "GetSteamID" }, // 134683760
+		{ &Z_Construct_UFunction_UISteamUser_GetSteamUser, "GetSteamUser" }, // 3757022
 		{ &Z_Construct_UFunction_UISteamUser_GetVoice, "GetVoice" }, // 204085828
 		{ &Z_Construct_UFunction_UISteamUser_GetVoiceOptimalSampleRate, "GetVoiceOptimalSampleRate" }, // 860489938
 		{ &Z_Construct_UFunction_UISteamUser_InitiateGameConnection, "InitiateGameConnection" }, // 581694134
@@ -2385,15 +2385,15 @@ void FOnValidateAuthTicketResponseDelegate_DelegateWrapper(const FMulticastScrip
 		return UISteamUser::StaticClass();
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UISteamUser);
-	struct Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UISteamUser, UISteamUser::StaticClass, TEXT("UISteamUser"), &Z_Registration_Info_UClass_UISteamUser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamUser), 1913328460U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UISteamUser, UISteamUser::StaticClass, TEXT("UISteamUser"), &Z_Registration_Info_UClass_UISteamUser, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamUser), 3372445235U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_2463558370(TEXT("/Script/SteamAPI_BPL_Plugin"),
-		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_2964250254(TEXT("/Script/SteamAPI_BPL_Plugin"),
+		Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUser_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

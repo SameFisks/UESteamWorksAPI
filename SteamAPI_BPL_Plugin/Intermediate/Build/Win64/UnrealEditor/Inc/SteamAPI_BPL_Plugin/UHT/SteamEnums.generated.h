@@ -15,7 +15,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define STEAMAPI_BPL_PLUGIN_SteamEnums_generated_h
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h
+#define CURRENT_FILE_ID FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_SteamEnums_h
 
 
 #define FOREACH_ENUM_ESTEAMGAMEOVERLAYTYPES(op) \

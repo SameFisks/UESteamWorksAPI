@@ -315,13 +315,13 @@ void EmptyLinkFunctionForGeneratedCodeSteamAPI_BPL_Plugin_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xE24B7AAF,
-				0xB750A442,
+				0x25EF4F6B,
+				0x1B27693B,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_SteamAPI_BPL_Plugin.OuterSingleton, PackageParams);
 		}
 		return Z_Registration_Info_UPackage__Script_SteamAPI_BPL_Plugin.OuterSingleton;
 	}
-	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_SteamAPI_BPL_Plugin(Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin, TEXT("/Script/SteamAPI_BPL_Plugin"), Z_Registration_Info_UPackage__Script_SteamAPI_BPL_Plugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xE24B7AAF, 0xB750A442));
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_SteamAPI_BPL_Plugin(Z_Construct_UPackage__Script_SteamAPI_BPL_Plugin, TEXT("/Script/SteamAPI_BPL_Plugin"), Z_Registration_Info_UPackage__Script_SteamAPI_BPL_Plugin, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0x25EF4F6B, 0x1B27693B));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -18,30 +18,30 @@ void FSteamAPI_BPL_PluginModule::StartupModule()
 {
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 
-	FFileHelper::SaveStringToFile(TEXT(RAW_APP_ID), TEXT("steam_appid.txt"));
+	//FFileHelper::SaveStringToFile(TEXT(RAW_APP_ID), TEXT("steam_appid.txt"));
 
-	SteamAPI_RestartAppIfNecessary(atoi(APP_ID));
+ //   SteamAPI_RestartAppIfNecessary(atoi(APP_ID));
 
-	if (SteamAPI_Init())
-	{
+ //   if (SteamAPI_Init())
+ //   {
 
-		CSteamID SteamID = FSteamAPI_BPL_PluginModule::GetMyID();
-		FString SteamIDString = FString::Printf(TEXT("%llu"), SteamID.ConvertToUint64());
-		UE_LOG(LogTemp, Display, TEXT("SteamID: %s"), *SteamIDString);
+ //   	CSteamID SteamID = FSteamAPI_BPL_PluginModule::GetSteamID();
+ //   	FString SteamIDString = FString::Printf(TEXT("%llu"), SteamID.ConvertToUint64());
+ //   	UE_LOG(LogTemp, Display, TEXT("SteamID: %s"), *SteamIDString);
 
-		UE_LOG(LogTemp, Display, TEXT("SteamAPI_Init Successful "));
+ //   	UE_LOG(LogTemp, Display, TEXT("SteamAPI_Init Successful "));
 
-		// Register the callback function
-		SteamAPI_RunCallbacks();
-		SteamFriends()->SetRichPresence("status", "Hello, world!");
+ //   	// Register the callback function
+ //   	SteamAPI_RunCallbacks();
+ //   	SteamFriends()->SetRichPresence("status", "Hello, world!");
 
-		//// Run Steam callbacks in the main game loop
-		//FCoreDelegates::OnBeginFrame.AddRaw(this, &FSteamAPI_BPL_PluginModule::RunSteamCallbacks);
-	}
-	else
-	{
-		UE_LOG(LogTemp, Error, TEXT("SteamAPI_Init Failed"));
-	}
+ //   	//// Run Steam callbacks in the main game loop
+ //   	//FCoreDelegates::OnBeginFrame.AddRaw(this, &FSteamAPI_BPL_PluginModule::RunSteamCallbacks);
+ //   }
+ //   else
+ //   {
+ //   	UE_LOG(LogTemp, Error, TEXT("SteamAPI_Init Failed"));
+ //   }
 
 
 
@@ -60,7 +60,7 @@ void FSteamAPI_BPL_PluginModule::ShutdownModule()
 
 void FSteamAPI_BPL_PluginModule::BeginPlay()
 {
-	FFileHelper::SaveStringToFile(TEXT(RAW_APP_ID), TEXT("steam_appid.txt"));
+	//FFileHelper::SaveStringToFile(TEXT(RAW_APP_ID), TEXT("steam_appid.txt"));
 
 }
 
@@ -109,12 +109,31 @@ bool FSteamAPI_BPL_PluginModule::SteamInit()
 	return false;
 }
 
-CSteamID& FSteamAPI_BPL_PluginModule::GetMyID()
+void FSteamAPI_BPL_PluginModule::SteamRestartAppIfNecessary()
+{
+	SteamAPI_RestartAppIfNecessary(atoi(APP_ID));
+}
+
+bool FSteamAPI_BPL_PluginModule::SteamShutdown()
+{
+	if (bInitialized)
+	{
+		SteamAPI_Shutdown();
+		bInitialized = false;
+		return true;
+	}
+	else
+	{
+				return false;
+	}
+}
+
+CSteamID& FSteamAPI_BPL_PluginModule::GetSteamID()
 {return myID;
 }
 
-
-const char* FSteamAPI_BPL_PluginModule::GetAppID()
+//Broken
+const char* FSteamAPI_BPL_PluginModule::GetSteamAppID()
 {return nullptr;
 }
 

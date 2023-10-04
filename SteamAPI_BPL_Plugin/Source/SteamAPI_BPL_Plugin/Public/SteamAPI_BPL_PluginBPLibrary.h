@@ -116,6 +116,12 @@ struct FSteamPlayerInfo
 
 	UPROPERTY(BlueprintReadWrite, Category = "SteamAPI")
 	ESteamFriendRelationship PlayerRelationship;
+
+
+	FSteamPlayerInfo()
+		: PlayerState(ESteamPersonaState::k_EPersonaStateOffline),
+		PlayerRelationship(ESteamFriendRelationship::k_EFriendRelationshipNone) {}
+
 };
 
 UENUM(BlueprintType)
@@ -143,6 +149,9 @@ struct FSteamGameCoordinatorResults
 
 	UPROPERTY(BlueprintReadWrite, Category = "SteamAPI|ISteamGameCoordinator")
 	TArray<uint8> MsgBuffer;
+
+	FSteamGameCoordinatorResults()
+		: MsgType(0) {}
 };
 
 UENUM(BlueprintType)
@@ -162,6 +171,9 @@ struct FSteamAppId_t
 
 		UPROPERTY(BlueprintReadWrite, Category = "SteamAPI")
 		int32 AppId;
+
+		FSteamAppId_t()
+			: AppId(0) {}
 };
 
 USTRUCT(BlueprintType)
@@ -171,6 +183,9 @@ struct FSteamId_t
 
 		UPROPERTY(BlueprintReadWrite, Category = "SteamAPI")
 		int32 Id;
+
+		FSteamId_t()
+			: Id(0) {}
 };
 
 
@@ -181,6 +196,9 @@ struct FSteamDepotId_t
 
 		UPROPERTY(BlueprintReadWrite, Category = "SteamAPI")
 		int32 DepotId;
+
+		FSteamDepotId_t()
+			: DepotId(0) {}
 };
 
 
@@ -194,6 +212,9 @@ struct FSteamUint64
 
 	UPROPERTY(BlueprintReadWrite, Category = "SteamAPI")
 	int64 Value;
+
+	FSteamUint64()
+		: Value(0) {}
 };
 
 

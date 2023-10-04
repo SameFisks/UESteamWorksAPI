@@ -8,7 +8,7 @@
 #include "Steam.h"
 
 
-#define RAW_APP_ID "480"
+#define RAW_APP_ID "2545970"
 
 struct FSteamAppId_t;
 
@@ -32,8 +32,13 @@ public:
 
 	bool SteamInit();
 
-	static CSteamID& GetMyID();
-	static const char* GetAppID();
+	void SteamRestartAppIfNecessary();
+
+	bool SteamShutdown();
+
+	static CSteamID& GetSteamID();
+
+	static const char* GetSteamAppID();	//Broken
 
 private:
 

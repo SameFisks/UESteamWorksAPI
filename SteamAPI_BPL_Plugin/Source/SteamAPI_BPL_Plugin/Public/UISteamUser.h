@@ -62,7 +62,7 @@ public:
 	UISteamUser();
 	~UISteamUser();
 
-	UFUNCTION(BlueprintPure, Category = "SteamAPI", meta = (DisplayName = "Get Steam User", CompactNodeTitle = "SteaGetSteamUsermUser"))
+	UFUNCTION(BlueprintPure, Category = "SteamAPI", meta = (DisplayName = "Get Steam User", CompactNodeTitle = "SubSystem SteamUser"))
 		static UISteamUser* GetSteamUser() { return UISteamUser::StaticClass()->GetDefaultObject<UISteamUser>(); }
 
 	/**
@@ -260,7 +260,7 @@ public:
 	 * @return FSteamID
 	 */
 	UFUNCTION(BlueprintPure, Category = "SteamAPI|ISteamUser")
-		FSteamID GetSteamID() { return SteamUser()->GetSteamID().ConvertToUint64(); }
+		int64 GetSteamID() { return SteamUser()->GetSteamID().ConvertToUint64(); }
 
 	/**
 	 * Read captured audio data from the microphone buffer.

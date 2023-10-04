@@ -11,7 +11,7 @@ UISteamFriends::UISteamFriends(const FObjectInitializer& ObjectInitializer)
 
 //void UISteamFriends::ActivateGameOverlay(ESteamUserOverlayType DialogType)
 //{
-//	CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetMyID();
+//	CSteamID SteamId = FSteamAPI_BPL_PluginModule::Get().GetSteamID();
 //
 //	const FString DialogName = EnumToString(TEXT("ESteamUserOverlayType"), static_cast<uint8>(DialogType));
 //	SteamFriends()->ActivateGameOverlayToUser(TCHAR_TO_UTF8(*DialogName), SteamId);

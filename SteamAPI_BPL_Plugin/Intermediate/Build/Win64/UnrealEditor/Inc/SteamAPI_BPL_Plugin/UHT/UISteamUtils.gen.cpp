@@ -442,6 +442,20 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 		*(TArray<FSteamPlayerInfo>*)Z_Param__Result=UISteamUtils::GetFriends();
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(UISteamUtils::execShutdown)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=UISteamUtils::Shutdown();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(UISteamUtils::execRestartAppIfNecessary)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		UISteamUtils::RestartAppIfNecessary();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(UISteamUtils::execInit)
 	{
 		P_FINISH;
@@ -485,10 +499,12 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 			{ "IsSteamInBigPictureMode", &UISteamUtils::execIsSteamInBigPictureMode },
 			{ "IsSteamRunningInVR", &UISteamUtils::execIsSteamRunningInVR },
 			{ "IsVRHeadsetStreamingEnabled", &UISteamUtils::execIsVRHeadsetStreamingEnabled },
+			{ "RestartAppIfNecessary", &UISteamUtils::execRestartAppIfNecessary },
 			{ "SetOverlayNotificationInset", &UISteamUtils::execSetOverlayNotificationInset },
 			{ "SetOverlayNotificationPosition", &UISteamUtils::execSetOverlayNotificationPosition },
 			{ "SetVRHeadsetStreamingEnabled", &UISteamUtils::execSetVRHeadsetStreamingEnabled },
 			{ "ShowGamepadTextInput", &UISteamUtils::execShowGamepadTextInput },
+			{ "Shutdown", &UISteamUtils::execShutdown },
 			{ "StartVRDashboard", &UISteamUtils::execStartVRDashboard },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -593,8 +609,8 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UISteamUtils_GetAppID_Statics::Function_MetaDataParams[] = {
 		{ "Category", "SteamAPI|ISteamUtils" },
-		{ "DisplayName", "Steam GetAppID" },
-		{ "Keywords", "Steam GetAppID" },
+		{ "DisplayName", "Steam GetSteamAppID" },
+		{ "Keywords", "Steam GetSteamAppID" },
 		{ "ModuleRelativePath", "Public/UISteamUtils.h" },
 	};
 #endif
@@ -1475,6 +1491,31 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics
+	{
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics::Function_MetaDataParams[] = {
+		{ "Category", "SteamAPI|ISteamUtils" },
+		{ "DisplayName", "Steam RestartAppIfNecessary" },
+		{ "Keywords", "Steam RestartAppIfNecessary" },
+		{ "ModuleRelativePath", "Public/UISteamUtils.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UISteamUtils, nullptr, "RestartAppIfNecessary", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UISteamUtils_SetOverlayNotificationInset_Statics
 	{
 		struct ISteamUtils_eventSetOverlayNotificationInset_Parms
@@ -1679,6 +1720,46 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_UISteamUtils_Shutdown_Statics
+	{
+		struct ISteamUtils_eventShutdown_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UECodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((ISteamUtils_eventShutdown_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UECodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Bool | UECodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, nullptr, nullptr, sizeof(bool), sizeof(ISteamUtils_eventShutdown_Parms), &Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::PropPointers[] = {
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::Function_MetaDataParams[] = {
+		{ "Category", "SteamAPI|ISteamUtils" },
+		{ "DisplayName", "Steam Shutdown" },
+		{ "Keywords", "Steam Shutdown" },
+		{ "ModuleRelativePath", "Public/UISteamUtils.h" },
+	};
+#endif
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UISteamUtils, nullptr, "Shutdown", nullptr, nullptr, sizeof(Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::ISteamUtils_eventShutdown_Parms), Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UISteamUtils_Shutdown()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UISteamUtils_Shutdown_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_UISteamUtils_StartVRDashboard_Statics
 	{
 #if WITH_METADATA
@@ -1747,7 +1828,7 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 	const FClassFunctionLinkInfo Z_Construct_UClass_UISteamUtils_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UISteamUtils_BOverlayNeedsPresent, "BOverlayNeedsPresent" }, // 1547913006
 		{ &Z_Construct_UFunction_UISteamUtils_GetAPICallFailureReason, "GetAPICallFailureReason" }, // 1264456182
-		{ &Z_Construct_UFunction_UISteamUtils_GetAppID, "GetAppID" }, // 2274659679
+		{ &Z_Construct_UFunction_UISteamUtils_GetAppID, "GetAppID" }, // 3278867812
 		{ &Z_Construct_UFunction_UISteamUtils_GetConnectedUniverse, "GetConnectedUniverse" }, // 3049928397
 		{ &Z_Construct_UFunction_UISteamUtils_GetCurrentBatteryPower, "GetCurrentBatteryPower" }, // 511763988
 		{ &Z_Construct_UFunction_UISteamUtils_GetEnteredGamepadTextInput, "GetEnteredGamepadTextInput" }, // 800768627
@@ -1770,10 +1851,12 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 		{ &Z_Construct_UFunction_UISteamUtils_IsSteamInBigPictureMode, "IsSteamInBigPictureMode" }, // 1348786668
 		{ &Z_Construct_UFunction_UISteamUtils_IsSteamRunningInVR, "IsSteamRunningInVR" }, // 1612720173
 		{ &Z_Construct_UFunction_UISteamUtils_IsVRHeadsetStreamingEnabled, "IsVRHeadsetStreamingEnabled" }, // 224555736
+		{ &Z_Construct_UFunction_UISteamUtils_RestartAppIfNecessary, "RestartAppIfNecessary" }, // 2418344307
 		{ &Z_Construct_UFunction_UISteamUtils_SetOverlayNotificationInset, "SetOverlayNotificationInset" }, // 1100469029
 		{ &Z_Construct_UFunction_UISteamUtils_SetOverlayNotificationPosition, "SetOverlayNotificationPosition" }, // 4145680054
 		{ &Z_Construct_UFunction_UISteamUtils_SetVRHeadsetStreamingEnabled, "SetVRHeadsetStreamingEnabled" }, // 335016751
 		{ &Z_Construct_UFunction_UISteamUtils_ShowGamepadTextInput, "ShowGamepadTextInput" }, // 2722954790
+		{ &Z_Construct_UFunction_UISteamUtils_Shutdown, "Shutdown" }, // 710996897
 		{ &Z_Construct_UFunction_UISteamUtils_StartVRDashboard, "StartVRDashboard" }, // 2498513433
 	};
 #if WITH_METADATA
@@ -1872,15 +1955,15 @@ void FOnSteamShutdownDelegate_DelegateWrapper(const FMulticastScriptDelegate& On
 		return UISteamUtils::StaticClass();
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UISteamUtils);
-	struct Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UISteamUtils, UISteamUtils::StaticClass, TEXT("UISteamUtils"), &Z_Registration_Info_UClass_UISteamUtils, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamUtils), 2356992340U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UISteamUtils, UISteamUtils::StaticClass, TEXT("UISteamUtils"), &Z_Registration_Info_UClass_UISteamUtils, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamUtils), 1314955190U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_2973226990(TEXT("/Script/SteamAPI_BPL_Plugin"),
-		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_3847820631(TEXT("/Script/SteamAPI_BPL_Plugin"),
+		Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamUtils_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

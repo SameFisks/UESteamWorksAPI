@@ -176,11 +176,9 @@ void EmptyLinkFunctionForGeneratedCodeUISteamClient() {}
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::Function_MetaDataParams[] = {
 		{ "Category", "SteamAPI|ISteamClient" },
-		{ "Comment", "// Assuming HSteamPipe is a typedef for int32 here\n" },
 		{ "DisplayName", "Steam BShutdownIfAllPipesClosed" },
 		{ "Keywords", "Steam ISteamClient BShutdownIfAllPipesClosed" },
 		{ "ModuleRelativePath", "Public/UISteamClient.h" },
-		{ "ToolTip", "Assuming HSteamPipe is a typedef for int32 here" },
 	};
 #endif
 	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UISteamClient, nullptr, "BShutdownIfAllPipesClosed", nullptr, nullptr, sizeof(Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::ISteamClient_eventBShutdownIfAllPipesClosed_Parms), Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed_Statics::Function_MetaDataParams)) };
@@ -493,7 +491,7 @@ void EmptyLinkFunctionForGeneratedCodeUISteamClient() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UISteamClient_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UISteamClient_BReleaseSteamPipe, "BReleaseSteamPipe" }, // 854725348
-		{ &Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed, "BShutdownIfAllPipesClosed" }, // 1853577365
+		{ &Z_Construct_UFunction_UISteamClient_BShutdownIfAllPipesClosed, "BShutdownIfAllPipesClosed" }, // 4264181580
 		{ &Z_Construct_UFunction_UISteamClient_ConnectToGlobalUser, "ConnectToGlobalUser" }, // 2005524344
 		{ &Z_Construct_UFunction_UISteamClient_CreateSteamPipe, "CreateSteamPipe" }, // 1406542541
 		{ &Z_Construct_UFunction_UISteamClient_GetIPCCallCount, "GetIPCCallCount" }, // 1653901499
@@ -541,15 +539,15 @@ void EmptyLinkFunctionForGeneratedCodeUISteamClient() {}
 		return UISteamClient::StaticClass();
 	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UISteamClient);
-	struct Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics
+	struct Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics
 	{
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
-	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UISteamClient, UISteamClient::StaticClass, TEXT("UISteamClient"), &Z_Registration_Info_UClass_UISteamClient, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamClient), 3875130368U) },
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_UISteamClient, UISteamClient::StaticClass, TEXT("UISteamClient"), &Z_Registration_Info_UClass_UISteamClient, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UISteamClient), 3282641740U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_2119608484(TEXT("/Script/SteamAPI_BPL_Plugin"),
-		Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_SameFisk_Home_SteamAPI_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_2186581478(TEXT("/Script/SteamAPI_BPL_Plugin"),
+		Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Projects_LyraWorldWar_Plugins_SteamAPI_BPL_Plugin_Source_SteamAPI_BPL_Plugin_Public_UISteamClient_h_Statics::ClassInfo),
 		nullptr, 0,
 		nullptr, 0);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
